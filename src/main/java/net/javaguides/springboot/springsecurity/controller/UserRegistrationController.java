@@ -29,15 +29,6 @@ public class UserRegistrationController {
     @Value("$(jwt.secret)")
     private String jwtSecret;
 
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
-        User user = userService.findByEmailAndPassword(loginRequest.getLogin(), loginRequest.getPassword());
-        if (user != null) {
-            return new ResponseEntity<>(generateToken(user.getEmail()), HttpStatus.OK);
-        }
-        return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
-    }
-
     @PostMapping
     public ResponseEntity<String> registerUserAccount(@RequestBody UserRegistrationDto userDto) {
 

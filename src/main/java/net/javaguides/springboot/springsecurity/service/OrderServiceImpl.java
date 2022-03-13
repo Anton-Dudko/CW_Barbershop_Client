@@ -45,6 +45,6 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order getOne(Long id) {
-        return orderRepos.getOne(id);
+        return orderRepos.findById(id).get();
     }
 }

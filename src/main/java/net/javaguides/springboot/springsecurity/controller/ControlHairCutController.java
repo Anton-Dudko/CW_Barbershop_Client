@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-@RequestMapping("har-cut")
+@RequestMapping("hair-cut")
 public class ControlHairCutController {
 
     private final PathFileService pathFileService;
