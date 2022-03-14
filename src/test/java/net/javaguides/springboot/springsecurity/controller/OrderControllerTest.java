@@ -38,7 +38,7 @@ public class OrderControllerTest extends TestCase {
 
     @Test
     @WithMockUser(roles = "USER")
-    public void testSaveHaircut() throws Exception {
+    public void testSaveOrder() throws Exception {
 
         mockMvc.perform(post("/orders" + idOrders))
                 .andDo(MockMvcResultHandlers.print())
@@ -47,7 +47,7 @@ public class OrderControllerTest extends TestCase {
 
     @Test
     @WithMockUser(roles = "USER")
-    public void testGetHaircut() throws Exception {
+    public void testGetOrder() throws Exception {
         mockMvc.perform(get("/orders" + idOrders))
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk());

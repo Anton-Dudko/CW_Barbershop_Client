@@ -43,7 +43,7 @@ public class HaircutControllerTest {
 
     @Test
     @WithMockUser(roles = "USER")
-    public void testAllFiles() throws Exception {
+    public void testAllHaircuts() throws Exception {
         mockMvc.perform(get("/hair-cut"))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
@@ -53,7 +53,7 @@ public class HaircutControllerTest {
 
     @Test
     @WithMockUser(roles = "USER")
-    public void testDeleteFile() throws Exception {
+    public void testDeleteHaircut() throws Exception {
         mockMvc.perform(delete("/hair-cut/" + id))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
@@ -63,7 +63,7 @@ public class HaircutControllerTest {
 
     @Test
     @WithMockUser(roles = "USER")
-    public void testGetFile() throws Exception {
+    public void testGetHaircut() throws Exception {
         mockMvc.perform(get("/hair-cut/" + id))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
