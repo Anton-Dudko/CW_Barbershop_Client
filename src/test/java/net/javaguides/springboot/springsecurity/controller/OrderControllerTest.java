@@ -52,4 +52,13 @@ public class OrderControllerTest extends TestCase {
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk());
     }
+
+    @Test
+    @WithMockUser(roles = "USER")
+    public void testSaveComment() throws Exception {
+
+        mockMvc.perform(post("/orders/" + idOrders))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk());
+    }
 }
